@@ -1,0 +1,14 @@
+{
+  "name": "fb-reg-selenium",
+  "version": "1.0.0",
+  "description": "Auto Facebook account registration script. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sajidur Rahman Shajib",
+  "license": "ISC",
+  "dependencies": {
+    "selenium-webdriver": "^4.8.2"
+  }
+}
