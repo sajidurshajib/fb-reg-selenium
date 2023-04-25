@@ -16,10 +16,10 @@ const delay = util.promisify(setTimeout);
     //first name
     await driver.findElement(By.name('firstname')).sendKeys('Bucky');
     await driver.findElement(By.name('lastname')).sendKeys('Barnes');
-    await driver.findElement(By.name('reg_email__')).sendKeys('bucky.inbox@gmail.com');
+    await driver.findElement(By.name('reg_email__')).sendKeys('sajidur.blog@gmail.com'); // change here
 
     await driver.wait(until.elementLocated(By.name('reg_email_confirmation__')), 10000);
-    await driver.findElement(By.name('reg_email_confirmation__')).sendKeys('bucky.inbox@gmail.com');
+    await driver.findElement(By.name('reg_email_confirmation__')).sendKeys('sajidur.blog@gmail.com'); // change here
 
     await driver.findElement(By.name('reg_passwd__')).sendKeys('silverarm');
 
@@ -27,31 +27,32 @@ const delay = util.promisify(setTimeout);
     await driver.findElement(By.name('birthday_month')).sendKeys('july');
     await driver.findElement(By.name('birthday_year')).sendKeys('1994');
     await driver.findElement(By.css('input[type="radio"][name="sex"][value="2"]')).click();
+    await driver.findElement(By.name('websubmit')).click();
 
     // email tab
-    await driver.switchTo().newWindow('tab');
-    await delay(3000);
+    // await driver.switchTo().newWindow('tab');
+    // await delay(3000);
 
-    let handles = await driver.getAllWindowHandles();
+    // let handles = await driver.getAllWindowHandles();
 
-    await driver.switchTo().window(handles[1]);
-    await driver.get('https://www.gmail.com');
-    await driver.findElement(By.name('identifier')).sendKeys('bucky.inbox@gmail.com');
-    await driver.findElement(By.xpath(`//*[text()='Next']`)).click();
+    // await driver.switchTo().window(handles[1]);
+    // await driver.get('https://www.gmail.com');
+    // await driver.findElement(By.name('identifier')).sendKeys('bucky.inbox@gmail.com');
+    // await driver.findElement(By.xpath(`//*[text()='Next']`)).click();
 
-    await delay(3000);
-    await driver.wait(until.elementLocated(By.name('Passwd')), 10000);
-    await driver.findElement(By.name('Passwd')).sendKeys('<Bucky307km/>');
-    await driver.findElement(By.xpath(`//*[text()='Next']`)).click();
+    // await delay(3000);
+    // await driver.wait(until.elementLocated(By.name('Passwd')), 10000);
+    // await driver.findElement(By.name('Passwd')).sendKeys('<Bucky307km/>');
+    // await driver.findElement(By.xpath(`//*[text()='Next']`)).click();
 
     // problem
     // await delay(25000);
     // await driver.wait(until.elementLocated(By.xpath(`//*[contains(text(), 'Google')]`)), 10000);
     // await driver.findElement(By.xpath(`//*[contains(text(), 'Google')]`)).click();
 
-    await delay(60000);
-    await driver.switchTo().window(handles[0]);
+    // await delay(60000);
+    // await driver.switchTo().window(handles[0]);
 
-    await delay(5000);
+    await delay(50000);
     await driver.quit();
 })();
